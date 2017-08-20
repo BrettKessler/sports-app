@@ -1,0 +1,21 @@
+<% include partials/header %>
+
+<h1>Who's Playing Today!</h1>
+<h4>Mens NCAA CBB</h4>
+
+<% data["games"].forEach(function(game){ %>
+    <ul>
+       <li><%= game["home"]["name"]%> 
+       Vs. 
+       <%=game["away"]["name"]%> 
+       On
+       <b><%=(game["broadcast"] ? game["broadcast"]["network"] : "N/A")%></b>
+       @
+       <b><i><%=(game["scheduled"] ? game["scheduled"] : "N/A")%></i></b>
+    
+
+        </li>
+    </ul>
+<% }); %>
+
+<% include partials/footer %>
